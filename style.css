@@ -1,0 +1,633 @@
+/* --- Reset & Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #E9EFE8;
+  --text-color: #1C1C1C;
+  --highlight-color: #172D50;
+  --card-bg: #FFFFFF;
+}
+
+body {
+  font-family: 'Mukta', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* --- Mobile-First Container (Max Width: 450px) --- */
+.app-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  box-shadow: 0 0 30px rgba(23, 45, 80, 0.08);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* --- Page 1: Banner Section --- */
+.banner-section {
+  width: 100%;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Page 2: Problems Section --- */
+.problems-section {
+  padding: 34px 18px 45px;
+  background-color: var(--bg-color);
+}
+
+/* Big Bold Two-Tone Badge Headings (Used Across All Sections) */
+.heading-wrapper {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 0 4px;
+}
+
+.badge-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.heading-line-1 {
+  display: block;
+  font-family: 'Noto Sans Devanagari', 'Mukta', 'Poppins', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: var(--text-color);
+  line-height: 1.28;
+  letter-spacing: -0.2px;
+  text-align: center;
+}
+
+.heading-badge {
+  display: inline-block;
+  background-color: var(--highlight-color);
+  color: #FFFFFF;
+  font-family: 'Noto Sans Devanagari', 'Mukta', 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  padding: 6px 16px 8px;
+  border-radius: 12px;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+  box-shadow: 0 5px 16px rgba(23, 45, 80, 0.22);
+  text-align: center;
+  max-width: 95%;
+}
+
+/* Polaroid Cards Stack */
+.cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 0 6px;
+}
+
+.polaroid-card {
+  position: relative;
+  background-color: var(--card-bg);
+  border-radius: 18px;
+  padding: 14px 14px 16px 14px;
+  box-shadow: 0 10px 26px rgba(23, 45, 80, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.polaroid-card:hover {
+  transform: scale(1.01) !important;
+  box-shadow: 0 14px 32px rgba(23, 45, 80, 0.15);
+}
+
+.tilt-left {
+  transform: rotate(-1.4deg);
+}
+
+.tilt-right {
+  transform: rotate(1.2deg);
+}
+
+.top-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--highlight-color);
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 4px 18px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 8px rgba(23, 45, 80, 0.2);
+  z-index: 3;
+}
+
+.card-image-box {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f0f3ef;
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 2px 6px;
+}
+
+.cross-icon {
+  font-size: 1.15rem;
+  color: var(--highlight-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.problem-title {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.14rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.35;
+}
+
+/* --- Page 3: Product Section --- */
+.product-section {
+  padding: 30px 16px 50px;
+  background-color: var(--bg-color);
+  border-top: 2px dashed rgba(23, 45, 80, 0.15);
+}
+
+
+/* --- Triangle of Care Diagram (Matching User's Reference Layout) --- */
+.triangle-diagram-stage {
+  padding: 10px 4px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.triangle-horizontal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  gap: 6px;
+}
+
+/* Center Big Product Showcase */
+.tri-center-cluster {
+  position: relative;
+  width: 165px;
+  height: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Big Central Product Image Frame */
+.tri-product-main {
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 4px solid var(--highlight-color);
+  box-shadow: 0 10px 30px rgba(23, 45, 80, 0.22);
+  z-index: 2;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tri-product-main:hover {
+  transform: scale(1.04);
+  box-shadow: 0 14px 36px rgba(23, 45, 80, 0.28);
+}
+
+.tri-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Pointer Lines with Dots (Matching Reference Diagram) */
+.tri-connector {
+  position: absolute;
+  background-color: var(--highlight-color);
+  z-index: 1;
+}
+
+.conn-left {
+  left: -20px;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+}
+
+.conn-left .conn-dot {
+  position: absolute;
+  left: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+}
+
+.conn-right {
+  right: -20px;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+}
+
+.conn-right .conn-dot {
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+}
+
+.conn-bottom {
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 22px;
+}
+
+.conn-bottom .conn-dot {
+  position: absolute;
+  bottom: -4px;
+  left: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+}
+
+/* Outer Info Boxes */
+.tri-info-box {
+  background: var(--card-bg);
+  border: 2px solid var(--highlight-color);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(23, 45, 80, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tri-info-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(23, 45, 80, 0.16);
+}
+
+.box-left, .box-right {
+  width: 114px;
+  min-height: 90px;
+  padding: 12px 8px;
+  flex-shrink: 0;
+}
+
+.tri-bottom-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.box-bottom {
+  width: 230px;
+  padding: 12px 18px;
+  text-align: center;
+}
+
+.box-bullet {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+}
+
+.box-left .box-bullet {
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.box-right .box-bullet {
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.box-bottom .box-bullet {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tri-box-text {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.product-bottom-desc-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 24px rgba(23, 45, 80, 0.08);
+  border-left: 5px solid var(--highlight-color);
+  margin-top: 25px;
+}
+
+.product-bottom-desc {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* --- Page 4 / Section 4: How EarCare Works (Tree Roadmap) --- */
+.how-it-works-section {
+  padding: 40px 14px 55px;
+  background-color: var(--bg-color);
+  border-top: 2px dashed rgba(23, 45, 80, 0.15);
+}
+
+
+/* Tree Roadmap Container */
+.tree-roadmap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 10px 0 20px;
+}
+
+/* Central Tree Trunk Line */
+.tree-trunk-line {
+  position: absolute;
+  top: 10px;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: linear-gradient(to bottom, var(--highlight-color), rgba(23, 45, 80, 0.6));
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.trunk-top-sprout {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--highlight-color);
+  font-size: 1.4rem;
+  animation: sproutBounce 3s ease-in-out infinite;
+}
+
+@keyframes sproutBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0) scale(1); }
+  50% { transform: translateX(-50%) translateY(-3px) scale(1.1); }
+}
+
+/* Step Items Staggered (Left / Right Alternating) */
+.tree-step-item {
+  position: relative;
+  width: 92%;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.step-left {
+  margin-right: auto;
+  margin-left: 0;
+  transform: translateX(-35px);
+}
+
+.step-right {
+  margin-left: auto;
+  margin-right: 0;
+  transform: translateX(35px);
+}
+
+.tree-step-item.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Subtle breathing / floating effect after entrance */
+.tree-step-item.is-visible .step-card {
+  animation: cardFloat 4.5s ease-in-out infinite;
+}
+.step-right.is-visible .step-card {
+  animation-delay: 2.25s;
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Branch Arm Connector with Animated Leaf */
+.tree-branch-arm {
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+}
+
+.step-left .tree-branch-arm {
+  right: -24px;
+  width: 24px;
+  height: 2px;
+  border-top: 2px solid var(--highlight-color);
+}
+
+.step-left .branch-leaf {
+  position: absolute;
+  right: -6px;
+  top: -12px;
+  color: var(--highlight-color);
+  font-size: 1.05rem;
+}
+
+.step-right .tree-branch-arm {
+  left: -24px;
+  width: 24px;
+  height: 2px;
+  border-top: 2px solid var(--highlight-color);
+}
+
+.step-right .branch-leaf {
+  position: absolute;
+  left: -6px;
+  top: -12px;
+  color: var(--highlight-color);
+  font-size: 1.05rem;
+}
+
+/* Leaf Swaying Animation */
+.branch-leaf i {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: swayLeaf 3.2s ease-in-out infinite;
+}
+.step-right .branch-leaf i {
+  animation-delay: 1.6s;
+}
+
+@keyframes swayLeaf {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(20deg) scale(1.15); }
+}
+
+/* Step Card (Larger, Organic Bubble Card Style) */
+.step-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 16px 18px;
+  border: 1.5px solid var(--highlight-color);
+  box-shadow: 0 10px 26px rgba(23, 45, 80, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-3px) scale(1.01) !important;
+  box-shadow: 0 14px 32px rgba(23, 45, 80, 0.16);
+}
+
+.step-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.step-pill {
+  background: var(--highlight-color);
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  animation: badgeGlow 2.5s infinite;
+  box-shadow: 0 2px 8px rgba(23, 45, 80, 0.2);
+}
+
+@keyframes badgeGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(23, 45, 80, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(23, 45, 80, 0);
+  }
+}
+
+.step-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--highlight-color);
+  line-height: 1.25;
+}
+
+.step-content-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Big Image Box */
+.step-img-wrap {
+  width: 86px;
+  height: 86px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--highlight-color);
+  background: #f0f3ef;
+  box-shadow: 0 4px 12px rgba(23, 45, 80, 0.1);
+}
+
+.step-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.step-card:hover .step-thumb {
+  transform: scale(1.08);
+}
+
+.icon-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--highlight-color);
+}
+
+/* Larger Hindi Description Text */
+.step-desc {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.06rem;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.45;
+}
