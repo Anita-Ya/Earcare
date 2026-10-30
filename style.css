@@ -187,54 +187,60 @@ body {
 }
 
 
-/* --- Triangle of Care Diagram (Matching User's Reference Layout) --- */
+/* --- Triangle of Care Diagram (Mobile-Optimized Triangle, Zero Cutoff) --- */
 .triangle-diagram-stage {
-  padding: 10px 4px 20px;
+  padding: 10px 6px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 16px;
   width: 100%;
 }
 
-.triangle-horizontal-row {
+/* Top Row (Apex Card) */
+.tri-top-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  position: relative;
-  gap: 6px;
 }
 
-/* Center Big Product Showcase */
+.box-top {
+  width: 250px;
+  padding: 12px 18px;
+  text-align: center;
+  position: relative;
+}
+
+/* Center Big Product Showcase (Much Bigger!) */
 .tri-center-cluster {
   position: relative;
-  width: 165px;
-  height: 165px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin: 6px 0;
 }
 
 /* Big Central Product Image Frame */
 .tri-product-main {
-  width: 155px;
-  height: 155px;
+  width: 195px;
+  height: 195px;
   border-radius: 50%;
   overflow: hidden;
   background: #FFFFFF;
-  border: 4px solid var(--highlight-color);
-  box-shadow: 0 10px 30px rgba(23, 45, 80, 0.22);
+  border: 4.5px solid var(--highlight-color);
+  box-shadow: 0 12px 32px rgba(23, 45, 80, 0.22);
   z-index: 2;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tri-product-main:hover {
-  transform: scale(1.04);
-  box-shadow: 0 14px 36px rgba(23, 45, 80, 0.28);
+  transform: scale(1.03);
+  box-shadow: 0 16px 40px rgba(23, 45, 80, 0.28);
 }
 
 .tri-product-img {
@@ -244,56 +250,40 @@ body {
   display: block;
 }
 
-/* Pointer Lines with Dots (Matching Reference Diagram) */
+/* Pointer Lines with Dots (Triangle Connectors) */
 .tri-connector {
   position: absolute;
   background-color: var(--highlight-color);
   z-index: 1;
 }
 
-.conn-left {
-  left: -20px;
-  top: 50%;
-  width: 20px;
-  height: 2px;
-}
-
-.conn-left .conn-dot {
-  position: absolute;
-  left: -4px;
-  top: -3px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--highlight-color);
-}
-
-.conn-right {
-  right: -20px;
-  top: 50%;
-  width: 20px;
-  height: 2px;
-}
-
-.conn-right .conn-dot {
-  position: absolute;
-  right: -4px;
-  top: -3px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--highlight-color);
-}
-
-.conn-bottom {
-  bottom: -22px;
+.conn-top {
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: 22px;
+  height: 16px;
 }
 
-.conn-bottom .conn-dot {
+.conn-top .conn-dot {
+  position: absolute;
+  top: -4px;
+  left: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+}
+
+.conn-bl {
+  bottom: -16px;
+  left: 45px;
+  width: 2px;
+  height: 16px;
+  transform: rotate(24deg);
+}
+
+.conn-bl .conn-dot {
   position: absolute;
   bottom: -4px;
   left: -3px;
@@ -303,7 +293,42 @@ body {
   background: var(--highlight-color);
 }
 
-/* Outer Info Boxes */
+.conn-br {
+  bottom: -16px;
+  right: 45px;
+  width: 2px;
+  height: 16px;
+  transform: rotate(-24deg);
+}
+
+.conn-br .conn-dot {
+  position: absolute;
+  bottom: -4px;
+  right: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+}
+
+/* Bottom Row (Base Cards) */
+.tri-bottom-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.box-bl, .box-br {
+  flex: 1;
+  min-height: 82px;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+/* Info Box Styling */
 .tri-info-box {
   background: var(--card-bg);
   border: 2px solid var(--highlight-color);
@@ -321,25 +346,6 @@ body {
   box-shadow: 0 10px 24px rgba(23, 45, 80, 0.16);
 }
 
-.box-left, .box-right {
-  width: 114px;
-  min-height: 90px;
-  padding: 12px 8px;
-  flex-shrink: 0;
-}
-
-.tri-bottom-row {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.box-bottom {
-  width: 230px;
-  padding: 12px 18px;
-  text-align: center;
-}
-
 .box-bullet {
   position: absolute;
   width: 8px;
@@ -348,19 +354,13 @@ body {
   background: var(--highlight-color);
 }
 
-.box-left .box-bullet {
-  right: -5px;
-  top: 50%;
-  transform: translateY(-50%);
+.bullet-bottom {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.box-right .box-bullet {
-  left: -5px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.box-bottom .box-bullet {
+.bullet-top {
   top: -5px;
   left: 50%;
   transform: translateX(-50%);
@@ -368,7 +368,7 @@ body {
 
 .tri-box-text {
   font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
-  font-size: 0.94rem;
+  font-size: 0.96rem;
   font-weight: 700;
   color: var(--text-color);
   line-height: 1.35;
