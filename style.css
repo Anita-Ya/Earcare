@@ -438,37 +438,27 @@ body {
   50% { transform: translateX(-50%) translateY(-3px) scale(1.1); }
 }
 
-/* Step Items Staggered (Left / Right Alternating) */
+/* Step Items (Clean Centered Cards) */
 .tree-step-item {
   position: relative;
-  width: 92%;
+  width: 100%;
+  margin: 0 auto;
   z-index: 2;
   opacity: 0;
+  transform: translateY(25px);
   transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.step-left {
-  margin-right: auto;
-  margin-left: 0;
-  transform: translateX(-35px);
-}
-
-.step-right {
-  margin-left: auto;
-  margin-right: 0;
-  transform: translateX(35px);
 }
 
 .tree-step-item.is-visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 /* Subtle breathing / floating effect after entrance */
 .tree-step-item.is-visible .step-card {
   animation: cardFloat 4.5s ease-in-out infinite;
 }
-.step-right.is-visible .step-card {
+.tree-step-item:nth-child(even).is-visible .step-card {
   animation-delay: 2.25s;
 }
 
@@ -479,58 +469,6 @@ body {
   50% {
     transform: translateY(-3px);
   }
-}
-
-/* Branch Arm Connector with Animated Leaf */
-.tree-branch-arm {
-  position: absolute;
-  top: 28px;
-  z-index: 1;
-}
-
-.step-left .tree-branch-arm {
-  right: -24px;
-  width: 24px;
-  height: 2px;
-  border-top: 2px solid var(--highlight-color);
-}
-
-.step-left .branch-leaf {
-  position: absolute;
-  right: -6px;
-  top: -12px;
-  color: var(--highlight-color);
-  font-size: 1.05rem;
-}
-
-.step-right .tree-branch-arm {
-  left: -24px;
-  width: 24px;
-  height: 2px;
-  border-top: 2px solid var(--highlight-color);
-}
-
-.step-right .branch-leaf {
-  position: absolute;
-  left: -6px;
-  top: -12px;
-  color: var(--highlight-color);
-  font-size: 1.05rem;
-}
-
-/* Leaf Swaying Animation */
-.branch-leaf i {
-  display: inline-block;
-  transform-origin: bottom center;
-  animation: swayLeaf 3.2s ease-in-out infinite;
-}
-.step-right .branch-leaf i {
-  animation-delay: 1.6s;
-}
-
-@keyframes swayLeaf {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(20deg) scale(1.15); }
 }
 
 /* Step Card (Larger, Organic Bubble Card Style) */
