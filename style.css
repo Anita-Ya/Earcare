@@ -187,41 +187,97 @@ body {
 }
 
 
-/* --- Triangle of Care Diagram (Mobile-Optimized Triangle, Zero Cutoff) --- */
+/* --- Triangle of Care Diagram (Polished & Seamless Connections) --- */
 .triangle-diagram-stage {
-  padding: 10px 6px 20px;
+  padding: 10px 4px 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 0;
   width: 100%;
 }
 
-/* Top Row (Apex Card) */
-.tri-top-row {
+/* Card Styling */
+.tri-card {
+  background: var(--card-bg);
+  border: 2px solid var(--highlight-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(23, 45, 80, 0.1);
   display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.box-top {
-  width: 250px;
-  padding: 12px 18px;
-  text-align: center;
+  align-items: center;
   position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 2;
 }
 
-/* Center Big Product Showcase (Much Bigger!) */
+.tri-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(23, 45, 80, 0.16);
+}
+
+.card-icon-bubble {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(23, 45, 80, 0.08);
+  color: var(--highlight-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.tri-card-title {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Top Card (Apex) */
+.card-top {
+  width: 270px;
+  padding: 10px 16px;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: -5px;
+}
+
+/* Center Cluster with SVG Connectors */
 .tri-center-cluster {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 260px;
+  height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin: 6px 0;
+}
+
+.cluster-connectors-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.svg-conn-line {
+  stroke: var(--highlight-color);
+  stroke-width: 2.5;
+  stroke-dasharray: 4 3;
+}
+
+.svg-conn-dot {
+  fill: var(--highlight-color);
+  stroke: #FFFFFF;
+  stroke-width: 2;
 }
 
 /* Big Central Product Image Frame */
@@ -232,7 +288,7 @@ body {
   overflow: hidden;
   background: #FFFFFF;
   border: 4.5px solid var(--highlight-color);
-  box-shadow: 0 12px 32px rgba(23, 45, 80, 0.22);
+  box-shadow: 0 0 0 6px rgba(23, 45, 80, 0.1), 0 12px 32px rgba(23, 45, 80, 0.22);
   z-index: 2;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -240,7 +296,7 @@ body {
 
 .tri-product-main:hover {
   transform: scale(1.03);
-  box-shadow: 0 16px 40px rgba(23, 45, 80, 0.28);
+  box-shadow: 0 0 0 8px rgba(23, 45, 80, 0.15), 0 16px 40px rgba(23, 45, 80, 0.28);
 }
 
 .tri-product-img {
@@ -250,67 +306,6 @@ body {
   display: block;
 }
 
-/* Pointer Lines with Dots (Triangle Connectors) */
-.tri-connector {
-  position: absolute;
-  background-color: var(--highlight-color);
-  z-index: 1;
-}
-
-.conn-top {
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 16px;
-}
-
-.conn-top .conn-dot {
-  position: absolute;
-  top: -4px;
-  left: -3px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--highlight-color);
-}
-
-.conn-bl {
-  bottom: -16px;
-  left: 45px;
-  width: 2px;
-  height: 16px;
-  transform: rotate(24deg);
-}
-
-.conn-bl .conn-dot {
-  position: absolute;
-  bottom: -4px;
-  left: -3px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--highlight-color);
-}
-
-.conn-br {
-  bottom: -16px;
-  right: 45px;
-  width: 2px;
-  height: 16px;
-  transform: rotate(-24deg);
-}
-
-.conn-br .conn-dot {
-  position: absolute;
-  bottom: -4px;
-  right: -3px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--highlight-color);
-}
-
 /* Bottom Row (Base Cards) */
 .tri-bottom-row {
   display: flex;
@@ -318,61 +313,18 @@ body {
   justify-content: center;
   gap: 12px;
   width: 100%;
-  max-width: 380px;
+  max-width: 390px;
+  margin-top: -5px;
 }
 
-.box-bl, .box-br {
+.card-bl, .card-br {
   flex: 1;
   min-height: 82px;
-  padding: 12px 10px;
+  padding: 10px 12px;
+  gap: 8px;
+  flex-direction: column;
   text-align: center;
-}
-
-/* Info Box Styling */
-.tri-info-box {
-  background: var(--card-bg);
-  border: 2px solid var(--highlight-color);
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(23, 45, 80, 0.1);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tri-info-box:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(23, 45, 80, 0.16);
-}
-
-.box-bullet {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--highlight-color);
-}
-
-.bullet-bottom {
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.bullet-top {
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.tri-box-text {
-  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
-  font-size: 0.96rem;
-  font-weight: 700;
-  color: var(--text-color);
-  line-height: 1.35;
-  text-align: center;
 }
 
 .product-bottom-desc-card {
