@@ -1,6 +1,6 @@
-// --- Scroll Reveal Animations for Tree Steps & Cards ---
+// --- Scroll Reveal Animations for Elements ---
 document.addEventListener('DOMContentLoaded', () => {
-  const animatedElements = document.querySelectorAll('.tree-step-item, .polaroid-card');
+  const animatedElements = document.querySelectorAll('.tree-step-item, .polaroid-card, .herb-dish-card');
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
