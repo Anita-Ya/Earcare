@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ear Care</title>
-  <link rel="stylesheet" href="style.css?v=16.0">
+  <link rel="stylesheet" href="style.css?v=20.0">
   <!-- Google Fonts for crisp, ultra-bold and organic handwritten typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,7 +110,7 @@
     </section>
 
     <!-- Page 3: Product Hero Showcase Section -->
-    <section class="product-section">
+    <section class="product-section" id="product-details">
       
       <!-- Heading 2: Styled like Heading 1 -->
       <div class="heading-wrapper">
@@ -515,7 +515,7 @@
             <p class="product-box-desc">
               Product की पूरी जानकारी जानें।
             </p>
-            <a href="#order" class="product-cta-btn">
+            <a href="#product-details" class="product-cta-btn">
               <span>PRODUCT DETAILS देखें</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -558,28 +558,30 @@
         </div>
 
         <!-- The Order Form -->
-        <form class="order-form" id="orderForm" onsubmit="event.preventDefault(); alert('धन्यवाद! आपकी जानकारी दर्ज कर ली गई है। हमारी टीम जल्द ही आपसे संपर्क करेगी।');">
+        <form class="order-form" id="orderForm" novalidate>
           
           <!-- Field 1: Name -->
-          <div class="form-group">
+          <div class="form-group" id="groupName">
             <label class="form-label" for="userName">आपका नाम</label>
             <div class="form-input-wrap">
               <span class="input-icon"><i class="fa-regular fa-user"></i></span>
-              <input type="text" id="userName" name="name" class="form-input" placeholder="अपना पूरा नाम दर्ज करें।" required>
+              <input type="text" id="userName" name="name" class="form-input" placeholder="अपना पूरा नाम दर्ज करें।" autocomplete="name" required>
             </div>
+            <span class="form-error-msg" id="nameError">कृपया केवल अक्षरों में नाम लिखें</span>
           </div>
 
           <!-- Field 2: Mobile Number -->
-          <div class="form-group">
+          <div class="form-group" id="groupPhone">
             <label class="form-label" for="userPhone">मोबाइल नंबर</label>
             <div class="form-input-wrap">
               <span class="input-icon"><i class="fa-solid fa-phone"></i></span>
-              <input type="tel" id="userPhone" name="phone" class="form-input" placeholder="अपना 10 अंकों का मोबाइल नंबर दर्ज करें।" pattern="[0-9]{10}" maxlength="10" required>
+              <input type="tel" id="userPhone" name="phone" class="form-input" placeholder="अपना 10 अंकों का मोबाइल नंबर दर्ज करें।" maxlength="10" inputmode="numeric" autocomplete="tel" required>
             </div>
+            <span class="form-error-msg" id="phoneError">10 अंकों का सही मोबाइल नंबर डालें (6-9 से शुरू)</span>
           </div>
 
           <!-- Submit Button -->
-          <button type="submit" class="order-submit-btn">
+          <button type="submit" class="order-submit-btn" id="orderSubmitBtn">
             <i class="fa-solid fa-cart-shopping"></i>
             <span>ORDER NOW</span>
             <i class="fa-solid fa-arrow-right"></i>
@@ -815,8 +817,74 @@
       </div>
     </section>
 
+    <!-- Floating Sticky Bottom Order CTA Bar (Matching Reference) -->
+    <aside class="sticky-order-bar" id="stickyOrderBar">
+      <a href="#order" class="sticky-bar-link" aria-label="अभी ऑर्डर करें">
+        <div class="sticky-bar-badge-left">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <div class="sticky-bar-content">
+          <span class="sticky-bar-title">अभी ऑर्डर करें</span>
+          <span class="sticky-bar-subtitle">Limited Offer · EarCare</span>
+        </div>
+        <div class="sticky-bar-badge-right">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+    </aside>
+
   </div>
 
-  <script src="script.js?v=16.0"></script>
+  <!-- Thank You Confirmation Modal (Matching User Reference Image) -->
+  <div class="thankyou-modal-backdrop" id="thankYouModal" aria-hidden="true" role="dialog">
+    <div class="thankyou-modal-dialog">
+      <!-- Close Button -->
+      <button type="button" class="thankyou-modal-close" id="modalCloseX" aria-label="बंद करें">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Checkmark Icon with Double Soft Ring -->
+      <div class="thankyou-check-ring">
+        <div class="thankyou-check-circle">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </div>
+
+      <!-- Order Confirmed Pill Badge -->
+      <div class="thankyou-pill">Order Confirmed!</div>
+
+      <!-- Personalized Greeting -->
+      <h3 class="thankyou-title">बधाई हो, <span class="thankyou-cust-name" id="modalCustomerName">Customer</span>!</h3>
+      <p class="thankyou-subtext">आपके लिए <strong>EarCare</strong> का ऑर्डर सफलतापूर्वक स्वीकार कर लिया गया है।</p>
+
+      <!-- Order Details Summary Card -->
+      <div class="thankyou-summary-card">
+        <div class="summary-row">
+          <span class="summary-label">Order ID:</span>
+          <span class="summary-value" id="modalOrderId">EC-346000</span>
+        </div>
+        <div class="summary-row-divider"></div>
+        <div class="summary-row">
+          <span class="summary-label">Mobile:</span>
+          <span class="summary-value" id="modalMobile">+91 9987969798</span>
+        </div>
+        <div class="summary-row-divider"></div>
+        <div class="summary-row">
+          <span class="summary-label">Delivery:</span>
+          <span class="summary-value text-delivery">FREE Express Delivery</span>
+        </div>
+      </div>
+
+      <!-- Support Follow-up Info -->
+      <p class="thankyou-info-text">हमारे विशेषज्ञ जल्द ही डिलीवरी कन्फर्मेशन के लिए आपसे संपर्क करेंगे।</p>
+
+      <!-- Action Button -->
+      <button type="button" class="thankyou-action-btn" id="modalConfirmBtn">
+        धन्यवाद, ठीक है
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js?v=20.0"></script>
 </body>
 </html>

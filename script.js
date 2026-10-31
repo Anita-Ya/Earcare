@@ -207,4 +207,199 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // --- Smooth Scroll for Internal Anchor Links ---
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Focus name input if navigating to order section
+          if (targetId === '#order') {
+            const nameInput = document.getElementById('userName');
+            if (nameInput) {
+              setTimeout(() => nameInput.focus(), 400);
+            }
+          }
+        }
+      }
+    });
+  });
+
+  // --- Order Form Validation (Matching Reference Image) ---
+  const orderForm = document.getElementById('orderForm');
+  const userNameInput = document.getElementById('userName');
+  const userPhoneInput = document.getElementById('userPhone');
+  const groupName = document.getElementById('groupName');
+  const groupPhone = document.getElementById('groupPhone');
+
+  // Name Regex: Letters only (English & Hindi Devanagari), spaces and dots, min 2 chars
+  const nameRegex = /^[A-Za-z\u0900-\u097F\s.]{2,50}$/;
+  // Phone Regex: Exactly 10 digits starting with 6, 7, 8, or 9
+  const phoneRegex = /^[6-9]\d{9}$/;
+
+  function validateName() {
+    if (!userNameInput || !groupName) return true;
+    const val = userNameInput.value.trim();
+    if (!val || !nameRegex.test(val)) {
+      groupName.classList.add('has-error');
+      groupName.classList.remove('has-success');
+      return false;
+    } else {
+      groupName.classList.remove('has-error');
+      groupName.classList.add('has-success');
+      return true;
+    }
+  }
+
+  function validatePhone() {
+    if (!userPhoneInput || !groupPhone) return true;
+    const val = userPhoneInput.value.trim();
+    if (!phoneRegex.test(val)) {
+      groupPhone.classList.add('has-error');
+      groupPhone.classList.remove('has-success');
+      return false;
+    } else {
+      groupPhone.classList.remove('has-error');
+      groupPhone.classList.add('has-success');
+      return true;
+    }
+  }
+
+  if (userNameInput) {
+    userNameInput.addEventListener('input', () => {
+      if (groupName.classList.contains('has-error')) {
+        validateName();
+      }
+    });
+    userNameInput.addEventListener('blur', () => {
+      if (userNameInput.value.trim()) {
+        validateName();
+      }
+    });
+  }
+
+  if (userPhoneInput) {
+    // Restrict input to digits only
+    userPhoneInput.addEventListener('input', () => {
+      userPhoneInput.value = userPhoneInput.value.replace(/\D/g, '');
+      if (groupPhone.classList.contains('has-error')) {
+        validatePhone();
+      }
+    });
+    userPhoneInput.addEventListener('blur', () => {
+      if (userPhoneInput.value.trim()) {
+        validatePhone();
+      }
+    });
+  }
+
+  if (orderForm) {
+    orderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const isNameValid = validateName();
+      const isPhoneValid = validatePhone();
+
+      if (!isNameValid || !isPhoneValid) {
+        if (!isNameValid && userNameInput) {
+          userNameInput.focus();
+        } else if (!isPhoneValid && userPhoneInput) {
+          userPhoneInput.focus();
+        }
+        return false;
+      }
+
+      // Valid submission: Collect values before resetting
+      const enteredName = userNameInput ? userNameInput.value.trim() : '';
+      const enteredPhone = userPhoneInput ? userPhoneInput.value.trim() : '';
+
+      // Generate random order ID
+      const randomOrderId = 'EC-' + Math.floor(100000 + Math.random() * 900000);
+
+      // Populate Thank You Modal
+      const modalCustName = document.getElementById('modalCustomerName');
+      const modalOrderId = document.getElementById('modalOrderId');
+      const modalMobile = document.getElementById('modalMobile');
+      const thankYouModal = document.getElementById('thankYouModal');
+
+      if (modalCustName) modalCustName.textContent = enteredName || 'Customer';
+      if (modalOrderId) modalOrderId.textContent = randomOrderId;
+      if (modalMobile) modalMobile.textContent = enteredPhone ? ('+91 ' + enteredPhone) : '+91 ----------';
+
+      // Open Modal
+      if (thankYouModal) {
+        thankYouModal.classList.add('is-open');
+        thankYouModal.setAttribute('aria-hidden', 'false');
+      }
+
+      // Reset form
+      orderForm.reset();
+      if (groupName) groupName.classList.remove('has-success');
+      if (groupPhone) groupPhone.classList.remove('has-success');
+    });
+  }
+
+  // --- Thank You Modal Close Handlers ---
+  const thankYouModal = document.getElementById('thankYouModal');
+  const modalCloseX = document.getElementById('modalCloseX');
+  const modalConfirmBtn = document.getElementById('modalConfirmBtn');
+
+  function closeModal() {
+    if (thankYouModal) {
+      thankYouModal.classList.remove('is-open');
+      thankYouModal.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  if (modalCloseX) {
+    modalCloseX.addEventListener('click', closeModal);
+  }
+
+  if (modalConfirmBtn) {
+    modalConfirmBtn.addEventListener('click', closeModal);
+  }
+
+  if (thankYouModal) {
+    // Close on clicking backdrop outside the dialog card
+    thankYouModal.addEventListener('click', (e) => {
+      if (e.target === thankYouModal) {
+        closeModal();
+      }
+    });
+  }
+
+  // Close on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && thankYouModal && thankYouModal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+
+  // --- Sticky Floating Order Bar Observer ---
+  const stickyOrderBar = document.getElementById('stickyOrderBar');
+  const orderSection = document.getElementById('order');
+
+  if (stickyOrderBar && orderSection && 'IntersectionObserver' in window) {
+    const stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // When order form section is visible, hide sticky bottom bar
+        if (entry.isIntersecting) {
+          stickyOrderBar.classList.add('is-hidden');
+        } else {
+          stickyOrderBar.classList.remove('is-hidden');
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.15
+    });
+
+    stickyObserver.observe(orderSection);
+  }
 });

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed - EarCare</title>
+  <link rel="stylesheet" href="style.css?v=20.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@600;700;800&family=Noto+Sans+Devanagari:wght@700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      background-color: var(--bg-color);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 16px;
+    }
+    .thankyou-page-wrapper {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="thankyou-page-wrapper">
+    <div class="thankyou-modal-dialog thankyou-page-card">
+      <!-- Back / Home Button -->
+      <a href="index.html" class="thankyou-modal-close" aria-label="मुख्य पृष्ठ पर जाएँ">
+        <i class="fa-solid fa-xmark"></i>
+      </a>
+
+      <!-- Checkmark Icon with Double Soft Ring -->
+      <div class="thankyou-check-ring">
+        <div class="thankyou-check-circle">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </div>
+
+      <!-- Order Confirmed Pill Badge -->
+      <div class="thankyou-pill">Order Confirmed!</div>
+
+      <!-- Personalized Greeting -->
+      <h3 class="thankyou-title">बधाई हो, <span class="thankyou-cust-name" id="pageCustomerName">Customer</span>!</h3>
+      <p class="thankyou-subtext">आपके लिए <strong>EarCare</strong> का ऑर्डर सफलतापूर्वक स्वीकार कर लिया गया है।</p>
+
+      <!-- Order Details Summary Card -->
+      <div class="thankyou-summary-card">
+        <div class="summary-row">
+          <span class="summary-label">Order ID:</span>
+          <span class="summary-value" id="pageOrderId">EC-346000</span>
+        </div>
+        <div class="summary-row-divider"></div>
+        <div class="summary-row">
+          <span class="summary-label">Mobile:</span>
+          <span class="summary-value" id="pageMobile">+91 9987969798</span>
+        </div>
+        <div class="summary-row-divider"></div>
+        <div class="summary-row">
+          <span class="summary-label">Delivery:</span>
+          <span class="summary-value text-delivery">FREE Express Delivery</span>
+        </div>
+      </div>
+
+      <!-- Support Follow-up Info -->
+      <p class="thankyou-info-text">हमारे विशेषज्ञ जल्द ही डिलीवरी कन्फर्मेशन के लिए आपसे संपर्क करेंगे।</p>
+
+      <!-- Action Button -->
+      <a href="index.html" class="thankyou-action-btn thankyou-link-btn">
+        धन्यवाद, ठीक है
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Read parameters from URL (e.g. ?name=Rahul&phone=9876543210)
+    const urlParams = new URLSearchParams(window.location.search);
+    const nameParam = urlParams.get('name');
+    const phoneParam = urlParams.get('phone');
+    
+    if (nameParam) {
+      document.getElementById('pageCustomerName').textContent = nameParam;
+    }
+    if (phoneParam) {
+      document.getElementById('pageMobile').textContent = '+91 ' + phoneParam;
+    }
+    const randomId = 'EC-' + Math.floor(100000 + Math.random() * 900000);
+    document.getElementById('pageOrderId').textContent = randomId;
+  </script>
+</body>
+</html>
+
