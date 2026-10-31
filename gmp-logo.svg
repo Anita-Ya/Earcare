@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gmpNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a66"/>
+      <stop offset="100%" stop-color="#172D50"/>
+    </linearGradient>
+    <linearGradient id="gmpGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6b85c"/>
+      <stop offset="50%" stop-color="#ffd573"/>
+      <stop offset="100%" stop-color="#c9952a"/>
+    </linearGradient>
+    <path id="gmpTextPathTop" d="M 30,100 A 70,70 0 0,1 170,100" fill="none"/>
+    <path id="gmpTextPathBot" d="M 170,100 A 70,70 0 0,1 30,100" fill="none"/>
+  </defs>
+
+  <!-- Outer Scalloped / Star Seal Edge -->
+  <circle cx="100" cy="100" r="96" fill="url(#gmpGold)"/>
+  <circle cx="100" cy="100" r="91" fill="#FFFFFF"/>
+  <circle cx="100" cy="100" r="88" fill="url(#gmpNavy)"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="url(#gmpGold)" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- Top Curved Text -->
+  <text fill="#FFFFFF" font-family="'Poppins', sans-serif" font-size="10.5" font-weight="800" letter-spacing="2.2">
+    <textPath href="#gmpTextPathTop" startOffset="50%" text-anchor="middle">GOOD MANUFACTURING</textPath>
+  </text>
+
+  <!-- Bottom Curved Text -->
+  <text fill="url(#gmpGold)" font-family="'Poppins', sans-serif" font-size="10.5" font-weight="800" letter-spacing="2.2">
+    <textPath href="#gmpTextPathBot" startOffset="50%" text-anchor="middle">★ PRACTICE CERTIFIED ★</textPath>
+  </text>
+
+  <!-- Inner Center Medallion -->
+  <circle cx="100" cy="100" r="54" fill="#FFFFFF" stroke="url(#gmpGold)" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="49" fill="url(#gmpNavy)"/>
+
+  <!-- Stars Above GMP -->
+  <g fill="url(#gmpGold)">
+    <polygon points="100,64 102,69 107,69 103,72 105,77 100,74 95,77 97,72 93,69 98,69"/>
+    <polygon points="86,67 87.5,71 91.5,71 88.5,73.5 90,77.5 86,75 82,77.5 83.5,73.5 80.5,71 84.5,71" transform="scale(0.85) translate(14, 18)"/>
+    <polygon points="114,67 115.5,71 119.5,71 116.5,73.5 118,77.5 114,75 110,77.5 111.5,73.5 108.5,71 112.5,71" transform="scale(0.85) translate(20, 18)"/>
+  </g>
+
+  <!-- GMP Center Text -->
+  <text x="100" y="106" fill="url(#gmpGold)" font-family="'Poppins', sans-serif" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="1.5">GMP</text>
+  
+  <!-- Subtext -->
+  <text x="100" y="122" fill="#FFFFFF" font-family="'Poppins', sans-serif" font-size="7.5" font-weight="700" text-anchor="middle" letter-spacing="1.2">CONSISTENT QUALITY</text>
+
+  <!-- Laurel Leaves Bottom -->
+  <path d="M 82,130 C 90,135 100,135 100,135 C 100,135 110,135 118,130" fill="none" stroke="url(#gmpGold)" stroke-width="2" stroke-linecap="round"/>
+</svg>

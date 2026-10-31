@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="isoNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a66"/>
+      <stop offset="100%" stop-color="#172D50"/>
+    </linearGradient>
+    <linearGradient id="isoGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6b85c"/>
+      <stop offset="50%" stop-color="#ffd573"/>
+      <stop offset="100%" stop-color="#c9952a"/>
+    </linearGradient>
+    <path id="isoTextPathTop" d="M 30,100 A 70,70 0 0,1 170,100" fill="none"/>
+    <path id="isoTextPathBot" d="M 170,100 A 70,70 0 0,1 30,100" fill="none"/>
+  </defs>
+
+  <!-- Outer Ring -->
+  <circle cx="100" cy="100" r="96" fill="url(#isoGold)"/>
+  <circle cx="100" cy="100" r="91" fill="#FFFFFF"/>
+  <circle cx="100" cy="100" r="88" fill="url(#isoNavy)"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="url(#isoGold)" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- Top Curved Text -->
+  <text fill="#FFFFFF" font-family="'Poppins', sans-serif" font-size="11" font-weight="800" letter-spacing="2.2">
+    <textPath href="#isoTextPathTop" startOffset="50%" text-anchor="middle">INTERNATIONAL STANDARD</textPath>
+  </text>
+
+  <!-- Bottom Curved Text -->
+  <text fill="url(#isoGold)" font-family="'Poppins', sans-serif" font-size="10.5" font-weight="800" letter-spacing="2.2">
+    <textPath href="#isoTextPathBot" startOffset="50%" text-anchor="middle">★ 9001:2015 CERTIFIED ★</textPath>
+  </text>
+
+  <!-- Inner Center Shield Medallion -->
+  <circle cx="100" cy="100" r="54" fill="#FFFFFF" stroke="url(#isoGold)" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="49" fill="url(#isoNavy)"/>
+
+  <!-- Shield Icon Background -->
+  <path d="M 100,62 C 112,62 122,66 122,66 C 122,86 114,104 100,114 C 86,104 78,86 78,66 C 78,66 88,62 100,62 Z" fill="rgba(230, 184, 92, 0.15)" stroke="url(#isoGold)" stroke-width="1.5"/>
+
+  <!-- ISO Text -->
+  <text x="100" y="98" fill="url(#isoGold)" font-family="'Poppins', sans-serif" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="2">ISO</text>
+  
+  <!-- Verified Badge Tick -->
+  <circle cx="100" cy="116" r="10" fill="url(#isoGold)"/>
+  <path d="M 96,116 L 99,119 L 105,113" fill="none" stroke="#172D50" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

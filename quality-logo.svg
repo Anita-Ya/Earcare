@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="qualNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a66"/>
+      <stop offset="100%" stop-color="#172D50"/>
+    </linearGradient>
+    <linearGradient id="qualGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6b85c"/>
+      <stop offset="50%" stop-color="#ffd573"/>
+      <stop offset="100%" stop-color="#c9952a"/>
+    </linearGradient>
+    <path id="qualTextPathTop" d="M 30,100 A 70,70 0 0,1 170,100" fill="none"/>
+    <path id="qualTextPathBot" d="M 170,100 A 70,70 0 0,1 30,100" fill="none"/>
+  </defs>
+
+  <!-- Outer Ring -->
+  <circle cx="100" cy="100" r="96" fill="url(#qualGold)"/>
+  <circle cx="100" cy="100" r="91" fill="#FFFFFF"/>
+  <circle cx="100" cy="100" r="88" fill="url(#qualNavy)"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="url(#qualGold)" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- Top Curved Text -->
+  <text fill="#FFFFFF" font-family="'Poppins', sans-serif" font-size="11" font-weight="800" letter-spacing="2.2">
+    <textPath href="#qualTextPathTop" startOffset="50%" text-anchor="middle">100% LABORATORY TESTED</textPath>
+  </text>
+
+  <!-- Bottom Curved Text -->
+  <text fill="url(#qualGold)" font-family="'Poppins', sans-serif" font-size="10.5" font-weight="800" letter-spacing="2.2">
+    <textPath href="#qualTextPathBot" startOffset="50%" text-anchor="middle">★ PREMIUM ASSURANCE ★</textPath>
+  </text>
+
+  <!-- Center Disc -->
+  <circle cx="100" cy="100" r="54" fill="#FFFFFF" stroke="url(#qualGold)" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="49" fill="url(#qualNavy)"/>
+
+  <!-- Lab Flask Icon with Herb Leaf -->
+  <g stroke="url(#qualGold)" stroke-width="2.2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Flask Neck & Body -->
+    <path d="M 94,66 L 106,66 M 96,66 L 96,78 L 86,98 C 84,103 88,108 94,108 L 106,108 C 112,108 116,103 114,98 L 104,78 L 104,66"/>
+    <!-- Liquid Level -->
+    <path d="M 89,92 C 95,90 105,94 111,92" fill="none"/>
+    <!-- Bubbles -->
+    <circle cx="98" cy="98" r="1.5" fill="url(#qualGold)"/>
+    <circle cx="104" cy="102" r="1.5" fill="url(#qualGold)"/>
+  </g>
+
+  <!-- Verified Check Shield Badge -->
+  <circle cx="100" cy="120" r="12" fill="url(#qualGold)"/>
+  <path d="M 95,120 L 98.5,123.5 L 105.5,116.5" fill="none" stroke="#172D50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -47,14 +47,14 @@ body {
 
 /* --- Page 2: Problems Section --- */
 .problems-section {
-  padding: 34px 18px 45px;
+  padding: 24px 16px 26px;
   background-color: var(--bg-color);
 }
 
 /* Big Bold Two-Tone Badge Headings (Used Across All Sections) */
 .heading-wrapper {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 18px;
   padding: 0 4px;
 }
 
@@ -68,12 +68,19 @@ body {
 .heading-line-1 {
   display: block;
   font-family: 'Noto Sans Devanagari', 'Mukta', 'Poppins', sans-serif;
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   font-weight: 900;
   color: var(--text-color);
-  line-height: 1.28;
+  line-height: 1.25;
   letter-spacing: -0.2px;
   text-align: center;
+}
+
+.heading-line-1.heading-long {
+  font-size: 1.34rem;
+  line-height: 1.32;
+  max-width: 380px;
+  margin: 0 auto;
 }
 
 .heading-badge {
@@ -182,10 +189,20 @@ body {
 /* --- Page 3: Product Section --- */
 .product-section {
   padding: 30px 16px 50px;
-  background-color: var(--bg-color);
-  border-top: 2px dashed rgba(23, 45, 80, 0.15);
+  background-color: var(--highlight-color);
+  border-top: none;
 }
 
+/* Heading in Product Section (Inverted for Dark Navy Background) */
+.product-section .heading-line-1 {
+  color: #FFFFFF;
+}
+
+.product-section .heading-badge {
+  background-color: var(--bg-color);
+  color: var(--highlight-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
 
 /* --- Triangle of Care Diagram (Polished & Seamless Connections) --- */
 .triangle-diagram-stage {
@@ -201,9 +218,9 @@ body {
 /* Card Styling */
 .tri-card {
   background: var(--card-bg);
-  border: 2px solid var(--highlight-color);
+  border: 2px solid rgba(233, 239, 232, 0.8);
   border-radius: 16px;
-  box-shadow: 0 8px 22px rgba(23, 45, 80, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   position: relative;
@@ -213,7 +230,7 @@ body {
 
 .tri-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(23, 45, 80, 0.16);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
 .card-icon-bubble {
@@ -269,14 +286,14 @@ body {
 }
 
 .svg-conn-line {
-  stroke: var(--highlight-color);
+  stroke: rgba(233, 239, 232, 0.7);
   stroke-width: 2.5;
   stroke-dasharray: 4 3;
 }
 
 .svg-conn-dot {
-  fill: var(--highlight-color);
-  stroke: #FFFFFF;
+  fill: #E9EFE8;
+  stroke: var(--highlight-color);
   stroke-width: 2;
 }
 
@@ -287,8 +304,8 @@ body {
   border-radius: 50%;
   overflow: hidden;
   background: #FFFFFF;
-  border: 4.5px solid var(--highlight-color);
-  box-shadow: 0 0 0 6px rgba(23, 45, 80, 0.1), 0 12px 32px rgba(23, 45, 80, 0.22);
+  border: 4.5px solid #E9EFE8;
+  box-shadow: 0 0 0 6px rgba(233, 239, 232, 0.2), 0 14px 35px rgba(0, 0, 0, 0.4);
   z-index: 2;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -296,7 +313,7 @@ body {
 
 .tri-product-main:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 0 8px rgba(23, 45, 80, 0.15), 0 16px 40px rgba(23, 45, 80, 0.28);
+  box-shadow: 0 0 0 8px rgba(233, 239, 232, 0.3), 0 18px 45px rgba(0, 0, 0, 0.48);
 }
 
 .tri-product-img {
@@ -331,8 +348,8 @@ body {
   background: var(--card-bg);
   border-radius: 14px;
   padding: 18px 20px;
-  box-shadow: 0 8px 24px rgba(23, 45, 80, 0.08);
-  border-left: 5px solid var(--highlight-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border-left: 5px solid #172D50;
   margin-top: 25px;
 }
 
@@ -346,9 +363,9 @@ body {
 
 /* --- Page 4 / Section 4: How EarCare Works (Tree Roadmap) --- */
 .how-it-works-section {
-  padding: 40px 14px 55px;
+  padding: 24px 14px 18px;
   background-color: var(--bg-color);
-  border-top: 2px dashed rgba(23, 45, 80, 0.15);
+  border-top: none;
 }
 
 
@@ -359,7 +376,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  padding: 10px 0 20px;
+  padding: 10px 0 10px;
 }
 
 /* Central Tree Trunk Line */
@@ -478,19 +495,19 @@ body {
 .step-content-row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
 }
 
-/* Big Image Box */
+/* Big Image Box (Enlarged) */
 .step-img-wrap {
-  width: 86px;
-  height: 86px;
-  border-radius: 14px;
+  width: 116px;
+  height: 116px;
+  border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid var(--highlight-color);
+  border: 2.5px solid var(--highlight-color);
   background: #f0f3ef;
-  box-shadow: 0 4px 12px rgba(23, 45, 80, 0.1);
+  box-shadow: 0 6px 18px rgba(23, 45, 80, 0.14);
 }
 
 .step-thumb {
@@ -503,6 +520,13 @@ body {
 
 .step-card:hover .step-thumb {
   transform: scale(1.08);
+}
+
+@media (max-width: 380px) {
+  .step-img-wrap {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .icon-fallback {
@@ -522,91 +546,1142 @@ body {
   line-height: 1.45;
 }
 
-/* --- Page 5 / Section 5: Traditional Ayurvedic Herbs Section --- */
+/* --- Page 5 / Section 5: Traditional Ayurvedic Herbs (Organic Culinary Table Platter) --- */
 .herbs-section {
-  padding: 40px 14px 60px;
+  padding: 22px 14px 22px;
   background-color: var(--bg-color);
-  border-top: 2px dashed rgba(23, 45, 80, 0.15);
+  border-top: none;
 }
 
 .herbs-intro-text {
   font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-color);
-  margin-top: 14px;
+  margin-top: 10px;
   text-align: center;
   line-height: 1.45;
   padding: 0 4px;
 }
 
-/* Organic 2-Column Herbs Dishes Grid (Culinary Herbal Bowl Style) */
-.herbs-organic-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px 14px;
-  margin-top: 28px;
+/* --- Organic Culinary Table Canvas (Matching Reference Image) --- */
+.culinary-table-canvas {
+  position: relative;
+  width: 100%;
+  padding: 12px 4px 8px;
+  margin-top: 10px;
+  overflow: hidden;
 }
 
-.herb-dish-card {
-  background: var(--card-bg);
-  border: 1.5px solid var(--highlight-color);
-  border-radius: 20px;
-  padding: 16px 10px 14px;
-  box-shadow: 0 8px 22px rgba(23, 45, 80, 0.08);
+/* Background Continuous Line-Art Contours (From Reference Image) */
+.line-art-contour {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.contour-top-left {
+  top: -15px;
+  left: -25px;
+  width: 155px;
+  height: 155px;
+}
+
+.contour-mid-right {
+  top: 36%;
+  right: -30px;
+  width: 165px;
+  height: 185px;
+}
+
+.contour-bottom-left {
+  bottom: 30px;
+  left: -25px;
+  width: 155px;
+  height: 155px;
+}
+
+/* Dynamic 2-Column Culinary Bowls Cluster */
+.culinary-dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.culinary-dish-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.3s ease;
 }
 
-.herb-dish-card:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(23, 45, 80, 0.16);
-}
+/* Organic Culinary Stagger (Natural Table Flat-Lay Feel) */
+.dish-pos-1 { transform: translateY(0); }
+.dish-pos-2 { transform: translateY(18px); }
+.dish-pos-3 { transform: translateY(-8px); }
+.dish-pos-4 { transform: translateY(12px); }
+.dish-pos-5 { transform: translateY(0); }
+.dish-pos-6 { transform: translateY(16px); }
+.dish-pos-7 { transform: translateY(-6px); }
+.dish-pos-8 { transform: translateY(10px); }
 
-/* Round Wooden Dish / Bowl Frame */
-.herb-bowl-wrap {
-  width: 110px;
-  height: 110px;
+/* Ceramic Bowl Frames (Shot from Above - Enlarged) */
+.ceramic-dish-frame {
   border-radius: 50%;
-  overflow: hidden;
   background: #FFFFFF;
-  border: 4px solid var(--highlight-color);
-  box-shadow: 0 6px 18px rgba(23, 45, 80, 0.2), inset 0 0 12px rgba(0, 0, 0, 0.15);
-  margin-bottom: 12px;
+  border: 5.5px solid #FFFFFF;
+  outline: 1.5px solid rgba(23, 45, 80, 0.14);
+  box-shadow: 0 14px 30px rgba(23, 45, 80, 0.16), inset 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.herb-bowl-img {
+.culinary-dish-card:hover .ceramic-dish-frame {
+  transform: scale(1.05);
+  box-shadow: 0 18px 40px rgba(23, 45, 80, 0.24);
+}
+
+/* Large and Medium Dish Sizes (Significantly Enlarged) */
+.dish-lg .ceramic-dish-frame {
+  width: 162px;
+  height: 162px;
+}
+
+.dish-md .ceramic-dish-frame {
+  width: 144px;
+  height: 144px;
+}
+
+.dish-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
 }
 
-.herb-dish-card:hover .herb-bowl-img {
-  transform: scale(1.1);
+/* Golden Warm Glow for Turmeric */
+.dish-warm-rim {
+  box-shadow: 0 14px 30px rgba(212, 137, 24, 0.32), inset 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Herb Label Badge */
-.herb-label-badge {
+/* Dish Name Pill Badge */
+.dish-name-pill {
+  display: inline-block;
+  margin-top: 10px;
   background: var(--highlight-color);
   color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 5px 16px;
   border-radius: 50px;
-  padding: 4px 14px;
-  box-shadow: 0 3px 8px rgba(23, 45, 80, 0.2);
-  display: inline-block;
-  max-width: 100%;
+  box-shadow: 0 4px 12px rgba(23, 45, 80, 0.22);
+  line-height: 1.2;
 }
 
-.herb-name {
+/* Compact Screens Adjustment */
+@media (max-width: 380px) {
+  .culinary-dishes-grid {
+    gap: 18px 6px;
+  }
+  .dish-lg .ceramic-dish-frame {
+    width: 142px;
+    height: 142px;
+  }
+  .dish-md .ceramic-dish-frame {
+    width: 126px;
+    height: 126px;
+  }
+  .dish-name-pill {
+    font-size: 0.76rem;
+    padding: 4px 12px;
+  }
+}
+
+/* --- Page 6 / Section 6: Quality & Transparency Section (Horizontal Swipe Carousel) --- */
+.quality-transparency-section {
+  padding: 22px 0 24px;
+  background-color: var(--bg-color);
+  border-top: none;
+}
+
+.swipe-hint-text {
+  font-family: 'Poppins', 'Mukta', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--highlight-color);
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* Horizontal Swipeable Carousel Stage */
+.quality-carousel-stage {
+  position: relative;
+  width: 100%;
+  margin-top: 14px;
+}
+
+.quality-carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 15px 24px 22px;
+  scrollbar-width: none;
+}
+
+.quality-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Dark Navy Carousel Card (Matching Reference Image) */
+.quality-carousel-card {
+  flex: 0 0 255px;
+  scroll-snap-align: center;
+  background: var(--highlight-color);
+  border-radius: 22px;
+  padding: 30px 18px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 14px 34px rgba(23, 45, 80, 0.28);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quality-carousel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(23, 45, 80, 0.38);
+}
+
+/* Big Circular Seal Emblem */
+.carousel-seal-wrap {
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 4px solid #C9952A;
+  outline: 4px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  position: relative;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  padding: 14px;
+  transition: transform 0.3s ease;
+  animation: sealPulse 4s ease-in-out infinite;
+}
+
+@keyframes sealPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+  50% {
+    transform: scale(1.035);
+    box-shadow: 0 12px 28px rgba(201, 149, 42, 0.45);
+  }
+}
+
+.quality-carousel-card:hover .carousel-seal-wrap {
+  transform: scale(1.06);
+}
+
+.carousel-seal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.carousel-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Carousel Pagination Dots */
+.carousel-dots-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(23, 45, 80, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  width: 28px;
+  border-radius: 12px;
+  background: var(--highlight-color);
+}
+
+/* Quality Summary Strip */
+.quality-summary-strip {
+  margin: 18px 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(23, 45, 80, 0.06);
+  border: 1.5px solid var(--highlight-color);
+  border-radius: 50px;
+  padding: 11px 18px;
+  text-align: center;
+}
+
+.summary-check-icon {
+  color: var(--highlight-color);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+}
+
+.summary-text {
   font-family: 'Poppins', sans-serif;
   font-size: 0.86rem;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  white-space: normal;
+  font-weight: 800;
+  color: var(--highlight-color);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+/* ========================================================
+   Page 7 / Section 7: Final CTA Section (Awareness & CTA)
+   Strict Palette: #E9EFE8 (Mint), #1C1C1C (Text), #172D50 (Navy)
+   ======================================================== */
+.final-cta-section {
+  padding: 22px 14px 24px;
+  background-color: var(--bg-color);
+  border-top: none;
+}
+
+/* Framed Outer Card */
+.final-cta-card {
+  background: #FFFFFF;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(23, 45, 80, 0.12);
+  border: 1.5px solid var(--highlight-color);
+  margin-top: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.final-cta-card:hover {
+  box-shadow: 0 18px 44px rgba(23, 45, 80, 0.18);
+}
+
+/* Card Body Content */
+.cta-card-body {
+  padding: 24px 16px 22px;
+}
+
+/* Symptoms Visual Stack (Matching Reference: Circular Photo + Navy Badge) */
+.symptoms-visual-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.symptom-visual-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.25s ease;
+}
+
+.symptom-circle-frame {
+  width: 80px;
+  height: 80px;
+  flex: 0 0 80px;
+  border-radius: 50%;
+  border: 3.5px solid var(--highlight-color);
+  background: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(23, 45, 80, 0.2);
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+.symptom-visual-item:hover .symptom-circle-frame {
+  transform: scale(1.06);
+}
+
+.symptom-circle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
+}
+
+/* Deep Navy Callout Badge (Matching Reference Shape) */
+.symptom-callout-badge {
+  flex: 1;
+  min-width: 0;
+  background: var(--highlight-color); /* Deep Navy #172D50 */
+  color: #FFFFFF;
+  padding: 11px 16px;
+  border-radius: 8px 22px 22px 8px;
+  box-shadow: 0 4px 14px rgba(23, 45, 80, 0.22);
+  display: flex;
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+.symptom-visual-item:hover .symptom-callout-badge {
+  transform: translateX(4px);
+}
+
+.symptom-badge-text {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.35;
+  letter-spacing: 0.2px;
+}
+
+/* Symptoms Conclusion Text */
+.symptoms-conclusion-text {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.5;
+  text-align: center;
+  margin: 4px 0 20px;
+  padding: 9px 14px;
+  background: rgba(23, 45, 80, 0.06);
+  border-radius: 10px;
+  border: 1px solid rgba(23, 45, 80, 0.12);
+}
+
+/* Medical Advice Box (Pale Mint / Navy Theme) */
+.cta-advice-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-color); /* Pale Mint #E9EFE8 */
+  border: 1.5px solid var(--highlight-color); /* Deep Navy #172D50 */
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+}
+
+.advice-doctor-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3.5px solid var(--highlight-color); /* Deep Navy #172D50 */
+  background: #FFFFFF;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(23, 45, 80, 0.22);
+}
+
+.advice-doctor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.advice-text {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Deep Navy Product & CTA Container */
+.cta-product-box {
+  background: var(--highlight-color); /* Deep Navy #172D50 */
+  border-radius: 20px;
+  padding: 26px 18px 22px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(23, 45, 80, 0.28);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.product-box-badge-icon {
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.product-box-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.product-box-desc {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 20px;
+  line-height: 1.45;
+}
+
+/* Mint Pill CTA Button with Navy Text (Strict Palette) */
+.product-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--bg-color); /* Pale Mint #E9EFE8 */
+  color: var(--highlight-color); /* Deep Navy #172D50 */
+  border: 2px solid #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 22px;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: btnPulseGlow 2.8s ease-in-out infinite;
+}
+
+.product-cta-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes btnPulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
+  }
+}
+
+@media (max-width: 380px) {
+  .cta-card-body {
+    padding: 18px 12px 18px;
+  }
+  .symptom-circle-frame {
+    width: 68px;
+    height: 68px;
+    flex: 0 0 68px;
+  }
+  .advice-doctor-wrap {
+    width: 68px;
+    height: 68px;
+    flex: 0 0 68px;
+    border-width: 3px;
+  }
+  .symptom-badge-text {
+    font-size: 0.96rem;
+  }
+  .symptom-callout-badge {
+    padding: 9px 12px;
+  }
+  .product-box-title {
+    font-size: 1.05rem;
+  }
+  .product-cta-btn {
+    font-size: 0.94rem;
+    padding: 13px 16px;
+  }
+}
+
+/* ========================================================
+   Page 8 / Section 8: Order Now Section (Lead / Order Form)
+   Strict Palette: #E9EFE8 (Mint), #1C1C1C (Text), #172D50 (Navy)
+   ======================================================== */
+.order-section {
+  padding: 22px 14px 24px;
+  background-color: var(--bg-color);
+  border-top: none;
+}
+
+.order-sub-desc {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.5;
+  padding: 0 8px;
+}
+
+/* Order Form Card Container (Matching Reference Layout) */
+.order-card-container {
+  background: #FFFFFF;
+  border-radius: 26px;
+  padding: 26px 18px 22px;
+  box-shadow: 0 16px 42px rgba(23, 45, 80, 0.12);
+  border: 1.8px solid var(--highlight-color);
+  margin-top: 16px;
+  position: relative;
+}
+
+/* Top Product Showcase Frame */
+.order-product-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.order-product-frame {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  background: var(--bg-color);
+  border: 3px solid var(--highlight-color);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(23, 45, 80, 0.16);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.order-product-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--highlight-color);
+  margin: 12px 0 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Elegant Leaf Divider (Matching Reference Image) */
+.order-leaf-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 260px;
+  margin-top: 4px;
+}
+
+.order-leaf-divider .divider-line {
+  flex: 1;
+  height: 1.5px;
+  background: rgba(23, 45, 80, 0.15);
+}
+
+.order-leaf-divider .divider-icon {
+  color: var(--highlight-color);
+  font-size: 0.95rem;
+}
+
+/* Form Groups & Inputs */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.form-label {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--text-color);
+  letter-spacing: 0.2px;
+}
+
+.form-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--highlight-color);
+  font-size: 1.1rem;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px 16px 15px 46px;
+  background: var(--bg-color); /* Pale Mint #E9EFE8 */
+  border: 1.5px solid rgba(23, 45, 80, 0.2);
+  border-radius: 14px;
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: rgba(28, 28, 28, 0.55);
+  font-weight: 500;
+}
+
+.form-input:focus {
+  border-color: var(--highlight-color);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(23, 45, 80, 0.12);
+}
+
+/* Submit Button (Deep Navy, High-Impact) */
+.order-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  background: var(--highlight-color); /* Deep Navy #172D50 */
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  border-radius: 50px;
+  border: none;
+  margin-top: 10px;
+  box-shadow: 0 8px 24px rgba(23, 45, 80, 0.32);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: orderBtnPulse 2.8s ease-in-out infinite;
+}
+
+.order-submit-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(23, 45, 80, 0.45);
+}
+
+@keyframes orderBtnPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(23, 45, 80, 0.32);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(23, 45, 80, 0.48);
+  }
+}
+
+/* Order Trust Badges Strip */
+.order-trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(23, 45, 80, 0.1);
+  color: var(--highlight-color);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.trust-item i {
+  font-size: 0.95rem;
+}
+
+.trust-divider {
+  opacity: 0.35;
+}
+
+/* ========================================================
+   Page 9 / Section 9: Customer Testimonials (ग्राहकों के अनुभव)
+   Strict Palette: #E9EFE8 (Mint), #1C1C1C (Text), #172D50 (Navy)
+   ======================================================== */
+.testimonials-section {
+  padding: 22px 0 35px;
+  background-color: var(--bg-color);
+  border-top: none;
+}
+
+.testimonials-stage {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Horizontal Swipeable Track */
+.testimonials-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 44px 20px 20px;
+  scrollbar-width: none;
+}
+
+.testimonials-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual Testimonial Card (Matching Reference Layout) */
+.testimonial-card {
+  flex: 0 0 320px;
+  scroll-snap-align: center;
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 55px 22px 26px;
+  position: relative;
+  box-shadow: 0 14px 36px rgba(23, 45, 80, 0.12);
+  border: 1.8px solid var(--highlight-color); /* Deep Navy #172D50 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(23, 45, 80, 0.18);
+}
+
+/* Floating Avatar Circle Overlapping Top Edge */
+.testi-avatar-frame {
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 4px solid #FFFFFF;
+  outline: 2.5px solid var(--highlight-color); /* Deep Navy #172D50 */
+  box-shadow: 0 8px 22px rgba(23, 45, 80, 0.25);
+  overflow: hidden;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .testi-avatar-frame {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.testi-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 5 Solid Stars Row (Deep Navy, Matching Reference) */
+.testi-stars-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: var(--highlight-color); /* Deep Navy #172D50 */
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+/* Quote Text (Italic, Clean, Readable) */
+.testi-quote-text {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-color); /* #1C1C1C */
+  line-height: 1.6;
+  margin: 0 0 18px;
+  flex-grow: 1;
+}
+
+/* Author Name */
+.testi-author-name {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--highlight-color); /* Deep Navy #172D50 */
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Pagination Dots */
+.testi-dots-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.testi-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(23, 45, 80, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.testi-dot.active {
+  width: 28px;
+  border-radius: 12px;
+  background: var(--highlight-color); /* Deep Navy #172D50 */
+}
+
+@media (max-width: 380px) {
+  .order-card-container {
+    padding: 24px 14px 20px;
+  }
+  .order-product-frame {
+    width: 100px;
+    height: 100px;
+  }
+  .order-product-name {
+    font-size: 1.3rem;
+  }
+  .form-input {
+    font-size: 0.94rem;
+    padding: 13px 12px 13px 40px;
+  }
+  .order-submit-btn {
+    font-size: 1.02rem;
+    padding: 14px 18px;
+  }
+  .order-trust-strip {
+    font-size: 0.74rem;
+    gap: 6px 8px;
+  }
+  .testimonial-card {
+    flex: 0 0 280px;
+    padding: 50px 16px 22px;
+  }
+  .testi-avatar-frame {
+    width: 82px;
+    height: 82px;
+    top: -42px;
+  }
+  .testi-quote-text {
+    font-size: 0.98rem;
+  }
+  .testi-author-name {
+    font-size: 1.08rem;
+  }
+}
+
+/* ========================================================
+   Page 10 / Section 10: FAQ Section (सवाल और जवाब)
+   Strict Palette: #E9EFE8 (Mint), #1C1C1C (Text), #172D50 (Navy)
+   ======================================================== */
+.faq-section {
+  padding: 22px 14px 60px;
+  background-color: var(--bg-color);
+  border-top: none;
+}
+
+.faq-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+  margin: 10px auto 0;
+}
+
+/* Individual FAQ Item Card */
+.faq-item {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1.6px solid var(--highlight-color); /* Deep Navy #172D50 */
+  box-shadow: 0 4px 16px rgba(23, 45, 80, 0.08);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.faq-item.active {
+  box-shadow: 0 8px 24px rgba(23, 45, 80, 0.14);
+}
+
+/* Question Button */
+.faq-question-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+}
+
+.faq-q-text {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--highlight-color); /* Deep Navy #172D50 */
+  line-height: 1.38;
+}
+
+.faq-chevron {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-color); /* Pale Mint #E9EFE8 */
+  color: var(--highlight-color); /* Deep Navy #172D50 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s;
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+  background: var(--highlight-color);
+  color: #FFFFFF;
+}
+
+/* Answer Panel */
+.faq-answer-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+  padding: 0 18px;
+}
+
+.faq-item.active .faq-answer-panel {
+  max-height: 240px;
+  padding: 0 18px 16px;
+}
+
+.faq-answer-text {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-color); /* #1C1C1C */
+  line-height: 1.55;
+  margin: 0;
+  border-top: 1px dashed rgba(23, 45, 80, 0.15);
+  padding-top: 12px;
+}
+
+@media (max-width: 380px) {
+  .faq-q-text {
+    font-size: 0.96rem;
+  }
+  .faq-answer-text {
+    font-size: 0.92rem;
+  }
+  .faq-question-btn {
+    padding: 14px 14px;
+  }
+}
+
+/* ========================================================
+   Page 11 / Section 11: Disclaimer (Subtle / Low-Key Footer)
+   Strict Palette: #E9EFE8 (Mint), #1C1C1C (Text), #172D50 (Navy)
+   ======================================================== */
+.disclaimer-section {
+  padding: 12px 18px 40px;
+  background-color: var(--bg-color);
+  border-top: none;
+}
+
+.disclaimer-container {
+  background: transparent;
+  border-top: 1px solid rgba(23, 45, 80, 0.12);
+  border-radius: 0;
+  padding: 16px 8px 0;
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.disclaimer-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--highlight-color);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+  opacity: 0.45;
+}
+
+.disclaimer-text {
+  font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: rgba(28, 28, 28, 0.42);
+  line-height: 1.45;
+  margin: 0;
+  text-align: center;
 }
